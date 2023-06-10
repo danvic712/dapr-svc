@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  github-scraper:
+    build:
+      context: "/Users/danvic712/Repositories/github-scraper/GitHubScraper"
+      dockerfile: "src/GitHubScraper/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net7.0/GitHubScraper.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      ASPNETCORE_URLS: "https://+:443;http://+:80"
+    image: "danvic712/github-scraper:dev"
+    ports: []
+    volumes:
+    - "/Users/danvic712/.aspnet/https:/root/.aspnet/https"
+    - "/Users/danvic712/.microsoft/usersecrets:/root/.microsoft/usersecrets"
+    - "/Users/danvic712/Repositories/github-scraper/GitHubScraper/src/GitHubScraper:/app:rw"
+    working_dir: "/app"

@@ -1,0 +1,16 @@
+apiVersion: dapr.io/v1alpha1
+kind: Configuration
+metadata:
+  name: daprConfig
+spec:
+  tracing:
+    samplingRate: "1"
+    zipkin:
+      endpointAddress: http://macbook-air.local:9411/api/v2/spans
+  httpPipeline:
+    handlers:
+      - name: "dapr-instance"
+        type: "http"
+        version: "v1"
+        settings:
+          baseURL: "http://macbook-air.local:3500"

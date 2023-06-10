@@ -1,0 +1,29 @@
+﻿version: '3'
+
+services:
+  github-scraper:
+    image: danvic712/github-scraper
+    ports:
+      - "8080:80"
+      - "8500:3500"
+    restart: always
+    build:
+      context: .
+      dockerfile: src/GitHubScraper/Dockerfile
+
+  github-scraper-dapr:
+    image: "daprio/daprd:edge"
+    command: [
+      "./daprd",
+      "--app-id", "github-scraper",
+      "--app-port", "80",
+      "--components-path", "/components",
+      "--config", "/configs/config.yaml"
+    ]
+    restart: always
+    depends_on:
+      - github-scraper
+    volumes:
+      - "./dapr/components/:/components"
+      - "./dapr/configs/:/configs"
+    network_mode: "service:github-scraper"

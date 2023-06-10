@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dapr", "dapr", "{4180D959-030B-4F67-8898-23BDF42F9C2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3766314B-5736-41C4-B2C6-C0F0068DF1AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitHubScraper", "src\GitHubScraper\GitHubScraper.csproj", "{79D32451-07FA-4EE8-A32B-D2D5BB8B1EA0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "components", "components", "{E727EFAF-6E29-4B3A-997A-4187CF02EC33}"
+	ProjectSection(SolutionItems) = preProject
+		dapr\components\pubsub.yaml = dapr\components\pubsub.yaml
+		dapr\components\statestore.yaml = dapr\components\statestore.yaml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EDC8637F-E464-4266-865A-F5CAEEED7912}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "configs", "configs", "{C2211AF4-5B86-40F5-A9F9-D4B71ADF0269}"
+	ProjectSection(SolutionItems) = preProject
+		dapr\configs\config.yaml = dapr\configs\config.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79D32451-07FA-4EE8-A32B-D2D5BB8B1EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79D32451-07FA-4EE8-A32B-D2D5BB8B1EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79D32451-07FA-4EE8-A32B-D2D5BB8B1EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79D32451-07FA-4EE8-A32B-D2D5BB8B1EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{79D32451-07FA-4EE8-A32B-D2D5BB8B1EA0} = {3766314B-5736-41C4-B2C6-C0F0068DF1AF}
+		{E727EFAF-6E29-4B3A-997A-4187CF02EC33} = {4180D959-030B-4F67-8898-23BDF42F9C2F}
+		{C2211AF4-5B86-40F5-A9F9-D4B71ADF0269} = {4180D959-030B-4F67-8898-23BDF42F9C2F}
+	EndGlobalSection
+EndGlobal
