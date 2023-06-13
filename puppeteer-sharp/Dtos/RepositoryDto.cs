@@ -8,7 +8,7 @@
 // Description:
 // -----------------------------------------------------------------------
 
-namespace GitHubScraper.Dtos;
+namespace PuppeteerScraper.Dtos;
 
 public class RepositoryDto
 {
