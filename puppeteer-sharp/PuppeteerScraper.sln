@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuppeteerScraper", "PuppeteerScraper.csproj", "{8292680D-8501-402B-BF6C-9D6187D33992}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuppeteerScraper", "PuppeteerScraper\PuppeteerScraper.csproj", "{017F743E-E01C-466A-9AF9-8E3BCE244F98}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{8292680D-8501-402B-BF6C-9D6187D33992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8292680D-8501-402B-BF6C-9D6187D33992}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8292680D-8501-402B-BF6C-9D6187D33992}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8292680D-8501-402B-BF6C-9D6187D33992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{017F743E-E01C-466A-9AF9-8E3BCE244F98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{017F743E-E01C-466A-9AF9-8E3BCE244F98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{017F743E-E01C-466A-9AF9-8E3BCE244F98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{017F743E-E01C-466A-9AF9-8E3BCE244F98}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
