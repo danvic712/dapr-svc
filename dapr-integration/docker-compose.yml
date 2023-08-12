@@ -1,35 +1,59 @@
 ﻿version: '3'
 
 services:
-  redis:
-    image: redis:alpine
-    
-  zipkin:
-    image: openzipkin/zipkin-slim:latest
-  
-  github-scraper:
-    image: danvic712/github-scraper
+  reverse-proxy:
+    container_name: reverse-proxy
+    image: nginx:alpine
     ports:
       - "8080:80"
-      - "8500:3500"
     restart: always
-    build:
-      context: .
-      dockerfile: src/GitHubScraper/Dockerfile
+    depends_on:
+      - foo-svc
+      # - foo-svc-slave
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+  
+  foo-svc:
+    container_name: foo-svc
+    image: danvic712/foo-svc:7.0
+    restart: always
 
-  github-scraper-dapr:
+  # foo-svc-slave:
+  #   container_name: foo-svc-slave
+  #   image: danvic712/foo-svc:7.0
+  #   restart: always
+
+  foo-svc-dapr:
+    container_name: foo-svc-dapr
     image: "daprio/daprd:edge"
     command: [
       "./daprd",
-      "--app-id", "github-scraper",
+      "--app-id", "foo-svc",
       "--app-port", "80",
-      "--components-path", "/components",
-      "--config", "/configs/config.yaml"
+      # "--resources-path", "/components",
+      # "--config", "/configs/config.yaml"
     ]
     restart: always
     depends_on:
-      - github-scraper
-    volumes:
-      - "./dapr/components/:/components"
-      - "./dapr/configs/:/configs"
-    network_mode: "service:github-scraper"
+      - foo-svc
+    # volumes:
+    #   - "./dapr/components/:/components"
+    #   - "./dapr/configs/:/configs"
+    network_mode: "service:foo-svc"
+
+  # foo-svc-slave-dapr:
+  #   container_name: foo-svc-slave-dapr
+  #   image: "daprio/daprd:edge"
+  #   command: [
+  #     "./daprd",
+  #     "--app-id", "foo-svc",
+  #     "--app-port", "80",
+  #   ]
+  #   restart: always
+  #   depends_on:
+  #     - foo-svc-slave
+  #   network_mode: "service:foo-svc-slave"
+
+networks:
+  foo-svc-network:
+    driver: bridge

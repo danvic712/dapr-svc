@@ -7,10 +7,3 @@ spec:
     samplingRate: "1"
     zipkin:
       endpointAddress: http://zipkin:9411/api/v2/spans
-  httpPipeline:
-    handlers:
-      - name: "dapr-instance"
-        type: "http"
-        version: "v1"
-        settings:
-          baseURL: "http://127.0.0.1:3500"
